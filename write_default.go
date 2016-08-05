@@ -49,8 +49,6 @@ func (w *Writer) WriteData(data interface{}) (err error) {
 		[]int8, []int16, []int32, []int64,
 		[]uint8, []uint16, []uint32, []uint64:
 		err = binary.Write(w, w.Endian, data)
-	default:
-		err = ErrInvalidVar
 	}
 	return
 }

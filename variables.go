@@ -1,12 +1,6 @@
 package endibuf
 
-import (
-	"encoding/binary"
-	"errors"
-)
+import "encoding/binary"
 
-// ErrInvalidVar is '*Reader.ReadData' function invalid type errors
-var ErrInvalidVar = errors.New("invalid variable")
-
-// DefaultEndian is default byte-order of NewReader
+// DefaultEndian is default byte-order of Reader/Writer
 var DefaultEndian = binary.BigEndian

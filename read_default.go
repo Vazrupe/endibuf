@@ -43,8 +43,6 @@ func (r *Reader) ReadData(data interface{}) (err error) {
 		[]int8, []int16, []int32, []int64,
 		[]uint8, []uint16, []uint32, []uint64:
 		err = binary.Read(r, r.Endian, data)
-	default:
-		err = ErrInvalidVar
 	}
 	return
 }
