@@ -3,7 +3,6 @@ package endibuf
 import (
 	"bytes"
 	"encoding/binary"
-	"fmt"
 	"math"
 )
 
@@ -95,8 +94,9 @@ func (r *Reader) ReadByte() (value byte, err error) {
 func (r *Reader) ReadBytes(size int) (value []byte, err error) {
 	value = make([]byte, size)
 	_, err = r.Read(value)
-	test := []interface{}{int32(0), int64(3)}
-	fmt.Println(test)
+	if size == 0 {
+		err = nil
+	}
 	return
 }
 
