@@ -21,21 +21,21 @@ Import:
 
 Reader:
 
-    reader := endibuf.NewReader(_buffer_)
-    var data _type_
+    reader := endibuf.NewReader(YOUR_BUFFER)
+    var data TYPE
     err := reader.ReadData(&data)
     if err != nil {
         panic(err)
     }
     fmt.Println(data)
     // define type
-    data, err = reader.Read_TYPENAME_()
+    data, err = reader.ReadTYPENAME()
     if err != nil {
         panic(err)
     }
     fmt.Println(data)
     // define type from offset
-    data, err = reader.Read_TYPENAME_FromOffset(_offset_)
+    data, err = reader.ReadTYPENAMEFromOffset(_offset_)
     if err != nil {
         panic(err)
     }
@@ -43,19 +43,19 @@ Reader:
 
 Writer:
 
-    writer := endibuf.NewWriter(_buffer_)
-    data := _your code_
+    writer := endibuf.NewWriter(YOUR_BUFFER)
+    data := YOUR_CODE
     err := writer.WriteData(data)
     if err != nil {
         panic(err)
     }
     // define type
-    err = writer.Write_TYPENAME_(data)
+    err = writer.WriteTYPENAME(data)
     if err != nil {
         panic(err)
     }
     // define type from offset
-    err = writer.Write_TYPENAME_FromOffset(_offset_, data)
+    err = writer.WriteTYPENAMEFromOffset(_offset_, data)
     if err != nil {
         panic(err)
     }
